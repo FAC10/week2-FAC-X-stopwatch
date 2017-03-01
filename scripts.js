@@ -8,4 +8,12 @@ function getCurrentTime() {
 }
 
 getCurrentTime();
-console.log(getCurrentTime());
+// console.log(getCurrentTime());
+
+function convertMilliseconds(){
+  var currentTime = getCurrentTime();
+  return new Date(currentTime).toString();
+}
+
+convertMilliseconds();
+console.log(convertMilliseconds());

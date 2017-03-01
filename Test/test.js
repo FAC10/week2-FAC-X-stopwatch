@@ -9,8 +9,26 @@ QUnit.test('function should return current time in milliseconds', function(asser
   var date = new Date();
   var currentTime = date.getTime();
   assert.equal(getCurrentTime(), currentTime);
-})
+});
+
+// QUnit.test('function should convert time in milliseconds to current date', function(assert) {
+//   var date = new Date();
+//   var currentDate = date.getTime().toString();
+//   assert.equal(convertMilliseconds(), currentDate);
+// });
+
+QUnit.test('function should convert time in milliseconds to current date', function(assert) {
+  var date = new Date();
+  var currentTime = date.getTime();
+  var currentDate = new Date(currentTime).toString();
+  assert.equal(convertMilliseconds(), currentDate);
+});
+
+
 
 // QUnit.test('If 2, returns 2', function(asserts) {
 //   asserts.equal(fizzBuzz(2), 2, "Success! 2 does equal 2")
 // })
+
+
+// currentDate.toString('yyyy-MM-dd');
