@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>FAC-X Stopwatch Test</title>
-  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
+
 </head>
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
-  <script src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
-  <script src="../scripts.js"></script>
+  <!-- Load the QUnit Testing Framework from CDN -->
+  <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+
+  <!-- Load Blanket.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.js"></script>
+  <script src="../scripts.js" data-cover></script>
   <script src="test.js"></script>
 </body>
 </html>
