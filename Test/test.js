@@ -20,7 +20,14 @@ QUnit.test('add(1,1) should equal 2', function(assert) {
 //   assert.equal(convertMilliseconds(), currentDate);
 // });
 
-QUnit.test('write a function that counts up in milliseconds', function(assert) {
-    
-  assert.equal(result, expected);
+QUnit.test('clicking the start button should button from start to started', function(assert) {
+var startButtonOnClick = document.getElementById('start').addEventListener('click', changeButton);
+function changeButton =  document.getElementById('start').innerHTML('started');
+}
+  assert.equal(document.getElementById('start'), 'started');
 });
+
+//write a function that tests if the start button starts the watch (expected = 1)
+//write a function that tests if the stop button stops the watch (expected > 0)
+//write a function that tests if when the watch starts, it counts moving time in some form
+//does milliseconds start over at 1 second

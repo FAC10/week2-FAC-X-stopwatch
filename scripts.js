@@ -17,9 +17,19 @@ function add(x, y) {
 // convertMilliseconds();
 // console.log(convertMilliseconds());
 
-var startTime = Date.now();
 
-var interval = setInterval(function() {
-  var elapsedTime = Date.now() - startTime;
-  document.getElementById('millisecond').innerHTML = (elapsedTime / 100).toFixed(0);
-}, 100);
+
+//function for counting milliseconds:
+
+// var startTime = Date.now();
+//
+// var interval = setInterval(function() {
+//   var elapsedTime = Date.now() - startTime;
+//   document.getElementById('millisecond').innerHTML = (elapsedTime / 100).toFixed(0);
+// }, 100);
+
+var startButtonOnClick = document.getElementById('start').addEventListener('click', changeButton);
+
+function changeButton(){
+  return document.getElementById('start').innerHTML('started');
+}
