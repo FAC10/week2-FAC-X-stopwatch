@@ -19,3 +19,8 @@ QUnit.test('add(1,1) should equal 2', function(assert) {
 //   var currentDate = new Date(currentTime).toString();
 //   assert.equal(convertMilliseconds(), currentDate);
 // });
+
+QUnit.test('write a function that counts up in milliseconds', function(assert) {
+    
+  assert.equal(result, expected);
+});
