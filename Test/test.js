@@ -48,9 +48,8 @@ document.getElementById('stop').addEventListener('click', function (){
   });
 });
 
-
+// test initials displayed when page loads
 // Wrapping tests in modules makes it go away -- why?
-
 // QUnit.module('tests initial values displayed to user before interacting with stopwatch', function(){
 
   QUnit.test('is the display value 0 for milliseconds when the page loads', function(assert) {
@@ -80,10 +79,18 @@ document.getElementById('stop').addEventListener('click', function (){
 
   assert.equal(result, expected);
   });
-
-
 // });
 
+
+document.getElementById('start').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "start", start the millisecond counter', function(assert) {
+    var result = document.getElementById('millisecond').innerHTML;
+    var expected = !0;
+
+
+  assert.ok(result, expected);
+  });
+});
 
 
 
