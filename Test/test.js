@@ -6,26 +6,42 @@ QUnit.test('add(1,1) should equal 2', function(assert) {
 }); // use deepEqual for arrays see: https://api.qunitjs.com/deepEqual/
 
 
-// Time practice
-// QUnit.test('function should return current time in milliseconds', function(assert) {
-//   var date = new Date();
-//   var currentTime = date.getTime();
-//   assert.equal(getCurrentTime(), currentTime);
+// WE FAC-ED UP. add to readMe
+// QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
+//   var expected = document.querySelector('.startButton').innerHTML = 'Started';
+//
+// // assert.equal('Started', expected);
+// // });
+//
+
+// QUnit.module('tests', function(assert) {
+
+  QUnit.test('is the button start', function(assert) {
+    var expected = 'Start';
+    var result = document.querySelector('.startButton').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+
+  // we couldn't figure out how to test an action applied to an element after the page has loaded.
+  // We wrapped our test in an event listener, so it wouldrun.
+  document.getElementById('start').addEventListener('click', function (){
+    QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
+      var expected = 'Started';
+      var result = document.querySelector('.startButton').innerHTML;
+
+    assert.equal(result, expected);
+    });
+  });
+
 // });
 //
-// QUnit.test('function should convert time in milliseconds to current date', function(assert) {
-//   var date = new Date();
-//   var currentTime = date.getTime();
-//   var currentDate = new Date(currentTime).toString();
-//   assert.equal(convertMilliseconds(), currentDate);
-// });
 
-QUnit.test('clicking the start button should button from start to started', function(assert) {
-var startButtonOnClick = document.getElementById('start').addEventListener('click', changeButton);
-function changeButton =  document.getElementById('start').innerHTML('started');
-}
-  assert.equal(document.getElementById('start'), 'started');
-});
+
+
+
+
 
 //write a function that tests if the start button starts the watch (expected = 1)
 //write a function that tests if the stop button stops the watch (expected > 0)
