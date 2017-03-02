@@ -49,6 +49,43 @@ document.getElementById('stop').addEventListener('click', function (){
 });
 
 
+// Wrapping tests in modules makes it go away -- why?
+
+// QUnit.module('tests initial values displayed to user before interacting with stopwatch', function(){
+
+  QUnit.test('is the display value 0 for milliseconds when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('millisecond').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for seconds when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('second').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for minutes when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('minute').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for hours when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('hour').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+
+// });
+
+
+
 
 //write a function that tests if the start button starts the watch (expected = 1)
 //write a function that tests if the stop button stops the watch (expected > 0)
