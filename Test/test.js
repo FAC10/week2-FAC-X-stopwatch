@@ -81,7 +81,7 @@ document.getElementById('stop').addEventListener('click', function (){
   });
 // });
 
-
+// check if when counter starts, millisecond counter increases
 document.getElementById('start').addEventListener('click', function (){
   QUnit.test('does clicking the button element with a class of "start", start the millisecond counter', function(assert) {
     var result = document.getElementById('millisecond').innerHTML;
@@ -92,6 +92,25 @@ document.getElementById('start').addEventListener('click', function (){
   });
 });
 
+
+document.getElementById('stop').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "stop", change the state of the active var', function(assert) {
+
+  assert.equal(active, false);
+  });
+});
+
+
+
+
+
+// QUnit.test('does the second counter increase when millisecond reaches 1000', function(assert) {
+//
+//   var miliBoundry = +1000;
+//
+//
+//   assert.ok(result, expected);
+// });
 
 
 //write a function that tests if the start button starts the watch (expected = 1)
