@@ -2,10 +2,34 @@ function add(x, y) {
   return x + y;
 }
 
-function multiply(x, y) {
-  return x * y;
-}
+// function getCurrentTime() {
+//   var today = new Date();
+//   return today.getTime();
+// }
+// getCurrentTime();
+// console.log(getCurrentTime());
+//
+//
+// function convertMilliseconds(){
+//   var currentTime = getCurrentTime();
+//   return new Date(currentTime).toString();
+// }
+// convertMilliseconds();
+// console.log(convertMilliseconds());
 
-function subtract(x, y) {
-  return x - y;
+
+
+//function for counting milliseconds:
+
+// var startTime = Date.now();
+//
+// var interval = setInterval(function() {
+//   var elapsedTime = Date.now() - startTime;
+//   document.getElementById('millisecond').innerHTML = (elapsedTime / 100).toFixed(0);
+// }, 100);
+
+var startButtonOnClick = document.getElementById('start').addEventListener('click', changeButton);
+
+function changeButton(){
+  return document.getElementById('start').innerHTML('started');
 }
