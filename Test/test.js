@@ -14,32 +14,39 @@ QUnit.test('add(1,1) should equal 2', function(assert) {
 // // });
 //
 
-// QUnit.module('tests', function(assert) {
+QUnit.test('is the button start', function(assert) {
+  var expected = 'Start';
+  var result = document.querySelector('.startButton').innerHTML;
 
-  QUnit.test('is the button start', function(assert) {
-    var expected = 'Start';
+assert.equal(result, expected);
+});
+
+QUnit.test('is the button stop', function(assert) {
+  var expected = 'Stop';
+  var result = document.querySelector('.stopButton').innerHTML;
+
+assert.equal(result, expected);
+});
+
+// we couldn't figure out how to test an action applied to an element after the page has loaded.
+// We wrapped our test in an event listener, so it wouldrun.
+document.getElementById('start').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
+    var expected = 'Started';
     var result = document.querySelector('.startButton').innerHTML;
 
   assert.equal(result, expected);
   });
+});
 
+document.getElementById('stop').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "stop" update the DOM', function (assert) {
+    var expected = 'Stopped';
+    var result = document.querySelector('.stopButton').innerHTML;
 
-  // we couldn't figure out how to test an action applied to an element after the page has loaded.
-  // We wrapped our test in an event listener, so it wouldrun.
-  document.getElementById('start').addEventListener('click', function (){
-    QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
-      var expected = 'Started';
-      var result = document.querySelector('.startButton').innerHTML;
-
-    assert.equal(result, expected);
-    });
+  assert.equal(result, expected);
   });
-
-// });
-//
-
-
-
+});
 
 
 
