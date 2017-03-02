@@ -1,7 +1,3 @@
-function add(x, y) {
-  return x + y;
-}
-
 // function getCurrentTime() {
 //   var today = new Date();
 //   return today.getTime();
@@ -33,9 +29,3 @@ function add(x, y) {
 //   console.log('Hi');
 // });
 //
-document.getElementById('start').addEventListener('click', changeButton, false);
-
-function changeButton() {
-  document.querySelector('.startButton').innerHTML = 'Started';
-  console.log('Hi');
-}
