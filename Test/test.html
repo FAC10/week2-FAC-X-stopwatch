@@ -8,6 +8,17 @@
 
 </head>
 <body>
+
+  <h1>Stopwatch</h1>
+  <div class='stopwatch'>
+    <span class='hour'>00</span>:
+    <span class='minute'>00</span>:
+    <span class='second'>00</span>:
+    <span id='millisecond'>00</span>
+  </div>
+  <button class='startButton' id='start'>Start</button>
+  <button id='stop'>Stop</button>
+
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
   <!-- Load the QUnit Testing Framework from CDN -->
@@ -17,5 +28,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.js"></script>
   <script src="../scripts.js" data-cover></script>
   <script src="test.js"></script>
+  <script src="firstapproach.js"></script>
 </body>
 </html>
