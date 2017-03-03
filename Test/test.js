@@ -6,26 +6,112 @@ QUnit.test('add(1,1) should equal 2', function(assert) {
 }); // use deepEqual for arrays see: https://api.qunitjs.com/deepEqual/
 
 
-// Time practice
-// QUnit.test('function should return current time in milliseconds', function(assert) {
-//   var date = new Date();
-//   var currentTime = date.getTime();
-//   assert.equal(getCurrentTime(), currentTime);
-// });
+// WE FAC-ED UP. add to readMe
+// QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
+//   var expected = document.querySelector('.startButton').innerHTML = 'Started';
 //
-// QUnit.test('function should convert time in milliseconds to current date', function(assert) {
-//   var date = new Date();
-//   var currentTime = date.getTime();
-//   var currentDate = new Date(currentTime).toString();
-//   assert.equal(convertMilliseconds(), currentDate);
+// // assert.equal('Started', expected);
+// // });
+//
+
+QUnit.test('is the button start', function(assert) {
+  var expected = 'Start';
+  var result = document.querySelector('.startButton').innerHTML;
+
+assert.equal(result, expected);
+});
+
+QUnit.test('is the button stop', function(assert) {
+  var expected = 'Stop';
+  var result = document.querySelector('.stopButton').innerHTML;
+
+assert.equal(result, expected);
+});
+
+// we couldn't figure out how to test an action applied to an element after the page has loaded.
+// We wrapped our test in an event listener, so it wouldrun.
+document.getElementById('start').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "start" update the DOM', function(assert) {
+    var expected = 'Started';
+    var result = document.querySelector('.startButton').innerHTML;
+
+  assert.equal(result, expected);
+  });
+});
+
+document.getElementById('stop').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "stop" update the DOM', function (assert) {
+    var expected = 'Stopped';
+    var result = document.querySelector('.stopButton').innerHTML;
+
+  assert.equal(result, expected);
+  });
+});
+
+// test initials displayed when page loads
+// Wrapping tests in modules makes it go away -- why?
+// QUnit.module('tests initial values displayed to user before interacting with stopwatch', function(){
+
+  QUnit.test('is the display value 0 for milliseconds when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('millisecond').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for seconds when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('second').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for minutes when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('minute').innerHTML;
+
+  assert.equal(result, expected);
+  });
+
+  QUnit.test('is the display value 0 for hours when the page loads', function(assert) {
+    var expected = '00';
+    var result = document.getElementById('hour').innerHTML;
+
+  assert.equal(result, expected);
+  });
 // });
 
-QUnit.test('clicking the start button should button from start to started', function(assert) {
-var startButtonOnClick = document.getElementById('start').addEventListener('click', changeButton);
-function changeButton =  document.getElementById('start').innerHTML('started');
-}
-  assert.equal(document.getElementById('start'), 'started');
+// check if when counter starts, millisecond counter increases
+document.getElementById('start').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "start", start the millisecond counter', function(assert) {
+    var result = document.getElementById('millisecond').innerHTML;
+    var expected = !0;
+
+
+  assert.ok(result, expected);
+  });
 });
+
+
+document.getElementById('stop').addEventListener('click', function (){
+  QUnit.test('does clicking the button element with a class of "stop", change the state of the active var', function(assert) {
+
+  assert.equal(active, false);
+  });
+});
+
+
+
+
+
+// QUnit.test('does the second counter increase when millisecond reaches 1000', function(assert) {
+//
+//   var miliBoundry = +1000;
+//
+//
+//   assert.ok(result, expected);
+// });
+
 
 //write a function that tests if the start button starts the watch (expected = 1)
 //write a function that tests if the stop button stops the watch (expected > 0)
