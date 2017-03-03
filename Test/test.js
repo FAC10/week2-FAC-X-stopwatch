@@ -100,7 +100,18 @@ document.getElementById('stop').addEventListener('click', function (){
   });
 });
 
+QUnit.test('tests whether time is counting', function (assert) {
+  var done = assert.async();
 
+  setTimeout(function(){
+    assert.strictEqual(document.getElementById('second').innerHTML, '03');
+    done();
+  }, 3100);
+});
+
+
+
+// }
 
 
 
